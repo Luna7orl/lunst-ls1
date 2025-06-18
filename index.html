@@ -1,0 +1,234 @@
+<!DOCTYPE html>More actions
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Especial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #add8e6; /* Fondo azul claro */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #000; /* Texto negro */
+    }
+
+    .contenedor {
+      max-width: 600px;
+      padding: 20px;
+      background: transparent;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input {
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #fef68a; /* Botones amarillos */
+      color: #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ffe75a;
+      transform: scale(1.02);
+    }
+
+    .oculto {
+      display: none;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .botones-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+
+    #error {
+      color: red;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <!-- Pantalla de contraseña -->
+    <div id="login">
+      <h2>Ingresa la contraseña</h2>
+      <input type="password" id="password" placeholder="Contraseña">
+      <button onclick="verificarContrasena()">Entrar</button>
+      <p id="error">Contraseña incorrecta</p>
+    </div>
+
+    <!-- Pantalla de nombre -->
+    <div id="nombre-pantalla" class="oculto">
+      <h2>¿Cuál es tu nombre?</h2>
+      <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+      <button onclick="enviarNombre()">Enviar</button>
+    </div>
+
+    <!-- Mensajes por partes -->
+    <div id="parte1" class="oculto">
+      <p>¡Gracias por estar aquí!</p>
+      <button onclick="mostrarParte('parte2')">Continuar</button>
+    </div>
+
+    <div id="parte2" class="oculto">
+      <p>Tengo que decirte algo, mira...</p>
+      <button onclick="mostrarParte('parte3')">Continuar</button>
+    </div>
+
+    <div id="parte3" class="oculto">
+      <p>Mi dedo</p>
+      <img src="https://i.ibb.co/Y7GZjN2x/image.jpg" alt="Dedo">
+      <div class="botones-container">
+        <button onclick="mostrarParte('parte4')">No es cierto, es lo siguiente</button>
+      </div>
+    </div>
+
+    <div id="parte4" class="oculto">
+      <p>Hola, soy yo de nuevo, no sé si abras esto y si sí, pues una disculpa por lo del dedo jajaja, era necesario que lo pusiera...</p>
+      <p>Me tardé un día casi sin parar y con tres horas de dormir por nostalgia, pensamientos y creando esta página. Nunca había hecho una por cierto, entonces tiene detalles que perfeccionar, pero espero que te haya gustado, es sólo para ti.</p>
+      <p>Me tardé dos dias casi sin parar y con cuatro horas de dormir creando esta página. Nunca había hecho una por cierto, entonces tiene detalles que perfeccionar, pero espero que te haya gustado, es sólo para ti.</p>
+      <p>Y pues es para decirte que eres una persona muy amable, muy linda, me atrevería a decir que la más linda que he conocido, con unas expresiones faciales demasiado bonitas y únicas, especial, única, con corazón de pollo, carismática muuuy carismática jajaja, aparte de coqueta claro y barbara jajaja pero creo que esto ya lo sabes. <p>
+       <p> Pero no venía a decirte lo mucho que vales y espectacular que eres pero no me costaba nada recordártelo, lo que te quería decir es que te debo una disculpa.   ...</p>
+      <button onclick="mostrarParte('parte5')">Continuar</button>
+    </div>
+
+    <div id="parte5" class="oculto">
+      <p>¿Verdad que sí quieres una disculpa, chimosilla?</p>
+      <button onclick="mostrarParte('parte6')">Seguir con la disculpa</button>
+    </div>
+
+    <div id="parte6" class="oculto">
+      <p>Te debo más que una disculpa por hacerte sentir "mal y tal vez confundida".</p>
+      <p>No sé si ya me la hayas aceptado, pero me voy a seguir disculpando porque aunque para mí no arreglan nada si la otra persona no las acepta...</p>
+      <p>Para mí también son un acto de arrepentimiento que tiene mucho valor según una persona, no son de cobardía, sino de valentía...</p>
+      <p>Y no te voy a mentir, aunque nos hemos conocido muy poco hasta el momento, para mí ya eres muy importante en mi vida...</p>
+      <p>Me importas más de lo que te he dicho y de lo que te podré decir. Conocerte es de las mejores cosas que han pasado hasta el momento...</p>
+      <p>Me interesa cómo te sientes desde que despiertas hasta que te vas a descansar...</p>
+      <p>Y aunque tal vez no lo demuestro con mis expresiones y acciones, estoy feliz al verte, conocerte y dichoso de ver cuando haces eso tan tuyo de fruncir la nariz...</p>
+      <p>Cada vez que miro tu sonrisa me siento afortunado cuando causo en ti una risa, cuando me dejas acompañarte a cualquier lugar...</p>
+      <p>Deseo que esta historia se siga escribiendo. Quiero saber qué puede ser de nosotros, qué nos prepara el mañana.</p>
+      <p>Porque si algo he aprendido de historias contadas y experiencias, es que cuando alguien importa de verdad, uno no se rinde tan fácil.</p>
+      <div class="botones-container">
+        <button onclick="mostrarParte('cierre')">Seguir con nuestra historia</button>
+        <button onclick="mostrarParte('parte5')">Opción anterior</button>
+      </div>
+    </div>
+
+    <div id="cierre" class="oculto">
+      <h2>Sigámonos conociendo</h2>
+      <p>Gracias por compartir este momento conmigo.</p>
+    </div>
+  </div>
+
+  <script>
+    function verificarContrasena() {
+      const pass = document.getElementById("password").value;
+      if (pass === "Pequitas") {
+        document.getElementById("login").classList.add("oculto");
+        document.getElementById("nombre-pantalla").classList.remove("oculto");
+        document.getElementById("error").style.display = "none";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+
+    function enviarNombre() {
+      const nombre = document.getElementById("nombre").value.trim();
+      if (!nombre) {
+        alert("Por favor ingresa tu nombre");
+        return;
+      }
+
+      // Envío del nombre usando FormSubmit
+      const formData = new FormData();
+      formData.append("name", nombre);
+      formData.append("_password", "Pequitas");
+
+      fetch("https://formsubmit.co/ajax/axelluneta76@gmail.com", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Nombre enviado:", data);
+        document.getElementById("nombre-pantalla").classList.add("oculto");
+        mostrarParte("parte1");
+      })
+      .catch(error => {
+        console.error("Error al enviar:", error);
+        // Continuar aunque falle el envío
+        document.getElementById("nombre-pantalla").classList.add("oculto");
+        mostrarParte("parte1");
+      });
+    }
+
+    function mostrarParte(id) {
+      const secciones = document.querySelectorAll(".contenedor > div");
+      secciones.forEach(sec => {
+        sec.classList.add("oculto");
+        sec.style.display = "none";
+      });
+
+      const seccion = document.getElementById(id);
+      seccion.classList.remove("oculto");
+      seccion.style.display = "block";
+
+      // Forzar reinicio de animación
+      void seccion.offsetWidth;
+      seccion.style.animation = "fadeIn 1s forwards";
+    }
+
+    // Permitir enviar con Enter
+    document.getElementById("password").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") verificarContrasena();
+    });
+
+    document.getElementById("nombre").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") enviarNombre();
+    });
+  </script>
+</body>
+</html>
